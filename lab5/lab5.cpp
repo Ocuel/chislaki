@@ -9,6 +9,11 @@ double function(double x)
 	return (1 + x + x * x) / pow((x * x * x - 1), 1 / 2);
 }
 
+double function2(double x, double y)
+{
+	return x * x + 2 * y;
+}
+
 void firstmethod(double a, double b, double h, double xi, double x0, double xn, double result) {
 	//formula trapeci
 	for (double i = a + h; i < b; i = i + h)
@@ -36,6 +41,32 @@ void secondmethod(double a, double b, double m, double h, double xi, double x0, 
 	cout << result << endl;
 }
 
+void thirdmethod(double a, double b, double c, double d, double (*f)(double X, double Y))
+{
+	//kubaturnaya formula Simpsona
+	double ih = 0;
+	int m = 7000;
+	int n = 0;
+	ih = 0;
+	n = m * 2;
+	double x = a;
+	double y = c;
+	double hx = (b - a) / n;
+	double hy = (d - c) / n;
+	for (int i = 0; i < m - 1; ++i)
+	{
+		for (int j = 0; j < m - 1; ++j)
+		{
+			ih += (hx * hy / 9) * (f(x, y) + 4 * f(x + hx, y) + f(x + 2 * hx, y) + 4 * f(x, y + hy) + 16 * f(x + hx, y + hy) + 4 * f(x + 2 * hx, y + hy) + f(x, y + 2 * hy) + 4 * f(x + hx, y + 2 * hy) + f(x + 2 * hx, y + 2 * hy));
+			y += 2 * hy;
+
+		}
+		x += 2 * hx;
+		y = c;
+	}
+	cout << ih << endl;
+}
+
 int main()
 {
 	int n = 0;
@@ -49,6 +80,10 @@ int main()
 	}
 	double a = 1.0;
 	double b = 2.631;
+	double a2 = 0;
+	double b2 = 2;
+	double c = 0;
+	double d = 1;
 	double h = 0;
 	double xi = 0;
 	double x0 = function(a);
@@ -57,4 +92,5 @@ int main()
 	h = (b - a) / n;
 	firstmethod(a, b, h, xi, x0, xn, result);
 	secondmethod(a, b, m, h, xi, x0, xn, result);
+	thirdmethod(a2, b2, c, d, function2);
 }

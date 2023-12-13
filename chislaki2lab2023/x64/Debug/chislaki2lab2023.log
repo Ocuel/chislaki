@@ -1,0 +1,7 @@
+﻿  chislaki2lab2023.cpp
+C:\Users\ocuel\source\repos\chislaki2lab2023\chislaki2lab2023\chislaki2lab2023.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\ocuel\source\repos\chislaki2lab2023\chislaki2lab2023\chislaki2lab2023.cpp(3,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\ocuel\source\repos\chislaki2lab2023\chislaki2lab2023\chislaki2lab2023.cpp(98,13): warning C4101: err: неиспользованная локальная переменная
+C:\Users\ocuel\source\repos\chislaki2lab2023\chislaki2lab2023\chislaki2lab2023.cpp(206,13): warning C4101: e: неиспользованная локальная переменная
+C:\Users\ocuel\source\repos\chislaki2lab2023\chislaki2lab2023\chislaki2lab2023.cpp(153): warning C4172: возвращение адреса локальной или временной переменной : X
+  chislaki2lab2023.vcxproj -> C:\Users\ocuel\source\repos\chislaki2lab2023\x64\Debug\chislaki2lab2023.exe
